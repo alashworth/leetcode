@@ -1,5 +1,7 @@
 BasedOnStyle: Google
 
+IndentWidth: 4
+ContinuationIndentWidth: 8
 AllowShortBlocksOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: All

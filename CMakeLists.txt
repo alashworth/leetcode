@@ -1,5 +1,5 @@
 # Preamble
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.14)
 project(leetcode)
 
 # Project wide setup
@@ -34,9 +34,7 @@ elseif (CLANG)
 	add_compile_options(-Weverything -Wno-C++-98-compat -Wno-c++-compat)
 endif ()
 
-
 add_compile_options($<$<CONFIG:DEBUG>:-Werror>)
-
 
 # Main targets built by this project
 add_subdirectory(src)

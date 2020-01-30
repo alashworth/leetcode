@@ -9,9 +9,7 @@ using namespace std;
 // given a string, find the longest substring without repeating characters
 
 int length_of_longest_substring(string s) {
-  if (s.empty()) {
-    return 0;
-  }
+  if (s.empty()) { return 0; }
   vector<char> substr, best_substr{s[0]};
 
   for (size_t i = 0; i < s.size(); ++i) {
@@ -20,9 +18,7 @@ int length_of_longest_substring(string s) {
       auto p = find(substr.begin(), substr.end(), s[j]);
       if (p == substr.end()) {
         substr.emplace_back(s[j]);
-        if (substr.size() > best_substr.size()) {
-          best_substr = substr;
-        }
+        if (substr.size() > best_substr.size()) { best_substr = substr; }
         continue;
       } else {
         break;

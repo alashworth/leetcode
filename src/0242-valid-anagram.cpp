@@ -9,21 +9,15 @@ using namespace std;
 // of s.
 //
 // Note: You may assume the string contains only lowercase alphabets.
-bool is_anagram(string s1, string s2) {
+bool is_anagram(const string& s1, string const& s2) {
   array<int, 26> hist{};
 
-  for (auto c : s1) {
-    ++hist[static_cast<size_t>(c - 'a')];
-  }
+  for (auto c : s1) { ++hist[static_cast<size_t>(c - 'a')]; }
 
-  for (auto c : s2) {
-    --hist[static_cast<size_t>(c - 'a')];
-  }
+  for (auto c : s2) { --hist[static_cast<size_t>(c - 'a')]; }
 
   for (auto i : hist) {
-    if (i != 0) {
-      return false;
-    }
+    if (i != 0) { return false; }
   }
   return true;
 }

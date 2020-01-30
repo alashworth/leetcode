@@ -34,8 +34,9 @@ bool is_palindrome(string s) {
       }
     }
 
-    if(front == back) {
-      i++; j--;
+    if (front == back) {
+      i++;
+      j--;
       continue;
     } else {
       return false;
@@ -50,6 +51,4 @@ TEST_CASE("Example 1") {
 
 TEST_CASE("Example 2") { CHECK(!is_palindrome("race a car")); }
 
-TEST_CASE("Punctuation") {
-  CHECK(is_palindrome(".,"));
-}
+TEST_CASE("Punctuation") { CHECK(is_palindrome(".,")); }

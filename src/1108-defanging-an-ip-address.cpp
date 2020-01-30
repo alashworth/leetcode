@@ -13,11 +13,11 @@ string defang_IP_address(string addr) {
   addr.resize(old_size + 6);
   ssize_t i = static_cast<ssize_t>(old_size) - 1;
   auto j = old_size + 5;
-  while(i >= 0) {
-    if(addr[static_cast<size_t>(i)] == '.') {
+  while (i >= 0) {
+    if (addr[static_cast<size_t>(i)] == '.') {
       addr[j] = ']';
-      addr[j-1] = '.';
-      addr[j-2] = '[';
+      addr[j - 1] = '.';
+      addr[j - 2] = '[';
       j -= 3;
       --i;
     } else {
