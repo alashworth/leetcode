@@ -1,10 +1,9 @@
-BasedOnStyle: Google
-
-IndentWidth: 4
-ContinuationIndentWidth: 8
-AllowShortBlocksOnASingleLine: true
-AllowShortCaseLabelsOnASingleLine: true
-AllowShortFunctionsOnASingleLine: All
-AllowShortIfStatementsOnASingleLine: Always
-AllowShortLambdasOnASingleLine: All
-AllowShortLoopsOnASingleLine: true
+---
+BasedOnStyle: WebKit
+ColumnLimit: 80
+FixNamespaceComments: true
+NamespaceIndentation: None
+AlwaysBreakTemplateDeclarations: Yes
+UseTab: ForContinuationAndIndentation
+TabWidth: 4
+...

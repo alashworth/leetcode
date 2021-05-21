@@ -1,3 +1,3 @@
-# Leetcode
+# Random C++ Repo
 
-Storage for my own solutions to leetcode.com problems.
+My solutions to various C++ puzzles and tutorials on the web.

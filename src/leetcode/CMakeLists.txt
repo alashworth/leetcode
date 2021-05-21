@@ -16,4 +16,3 @@ add_executable(leetcode
 		1114-print-in-order.cpp)
 
 target_link_libraries(leetcode PRIVATE doctest_with_main)
-target_compile_definitions(leetcode PRIVATE DOCTEST_CONFIG_SUPER_FAST_ASSERTS)
