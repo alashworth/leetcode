@@ -4,6 +4,10 @@ ColumnLimit: 80
 FixNamespaceComments: true
 NamespaceIndentation: None
 AlwaysBreakTemplateDeclarations: Yes
+AlwaysBreakBeforeMultilineStrings: true
+BreakBeforeBinaryOperators: None
+PointerAlignment: Middle
+IndentCaseLabels: false
 UseTab: ForContinuationAndIndentation
 TabWidth: 4
 ...
