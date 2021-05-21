@@ -36,6 +36,7 @@ elseif (CLANG)
 endif ()
 
 add_compile_options($<$<CONFIG:DEBUG>:-Werror>)
+add_compile_options($<$<CONFIG:RELWITHDEBINFO>:-march=native>)
 
 # Main targets built by this project
 add_subdirectory(src/leetcode)
