@@ -8,6 +8,6 @@ add_executable(euler
 		0008-largest-product-in-a-series.cpp
 		0009-special-pythagorean-triplet.cpp
 		0010-summation-of-primes.cpp
-		)
+		0011-largest-product-in-grid.cpp)
 
 target_link_libraries(euler PRIVATE doctest_with_main)
