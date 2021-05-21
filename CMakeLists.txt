@@ -8,7 +8,6 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 set(CMAKE_CXX_EXTENSIONS NO)
 
-find_package(Boost)
 # Externally provided content
 include(FetchContent)
 fetchcontent_declare(doctest
@@ -34,9 +33,6 @@ if (GNU)
 elseif (CLANG)
 	add_compile_options(-Weverything)
 endif ()
-
-add_compile_options($<$<CONFIG:DEBUG>:-Werror>)
-add_compile_options($<$<CONFIG:RELWITHDEBINFO>:-march=native>)
 
 # Main targets built by this project
 add_subdirectory(src/leetcode)
