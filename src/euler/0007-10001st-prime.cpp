@@ -53,5 +53,4 @@ TEST_CASE("Nth prime examples.")
 	REQUIRE_EQ(nth_prime(4), 7);
 	REQUIRE_EQ(nth_prime(5), 11);
 	REQUIRE_EQ(nth_prime(6), 13);
-	MESSAGE(nth_prime(10001));
 }

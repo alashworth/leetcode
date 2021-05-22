@@ -44,6 +44,5 @@ TEST_CASE("Summation of primes.")
 	{
 		auto v = sieve_of_eratosthenes(2'000'000);
 		auto r = std::reduce(v.begin(), v.end(), uint64_t(0));
-		MESSAGE(r);
 	}
 }

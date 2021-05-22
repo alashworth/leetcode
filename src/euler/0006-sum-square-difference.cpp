@@ -40,5 +40,4 @@ TEST_CASE("Testing diff.")
 	auto b = square_of_sums(n);
 	REQUIRE_EQ(b, 25502500);
 	uint64_t diff = (a > b) ? (a - b) : (b - a);
-	MESSAGE(diff);
 }

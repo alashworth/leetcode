@@ -43,5 +43,5 @@ int sum_even()
 TEST_CASE("Fibonacci sum")
 {
 	int n = sum_even();
-	REQUIRE_MESSAGE(n == 4613732, "The Fibonacci even sum is: ", n, ".");
+	REQUIRE(n == 4613732);
 }

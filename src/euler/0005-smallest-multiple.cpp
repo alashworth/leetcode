@@ -38,5 +38,4 @@ TEST_CASE("Testing smallest multiple example.")
 TEST_CASE("Testing smallest multiple.")
 {
 	auto ans = lcm_range(20);
-	MESSAGE(ans);
 }

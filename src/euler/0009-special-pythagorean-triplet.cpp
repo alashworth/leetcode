@@ -19,5 +19,4 @@ TEST_CASE("Special Pythagorean triplet.")
 	auto v = find_pythagorean_triplet(12);
 	REQUIRE_EQ(v, 60);
 	auto x = find_pythagorean_triplet(1000);
-	MESSAGE(x);
 }

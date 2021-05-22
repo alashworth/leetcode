@@ -40,5 +40,4 @@ uint64_t gprod(uint_least8_t winsz)
 TEST_CASE("Largest product in a series.")
 {
 	REQUIRE_EQ(gprod(4), 5832);
-	MESSAGE(gprod(13));
 }
