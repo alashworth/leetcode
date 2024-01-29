@@ -13,6 +13,8 @@ add_executable(leetcode
 		0242-valid-anagram.cpp
 		0387-first-unique-character-in-a-string.cpp
 		1108-defanging-an-ip-address.cpp
-		1114-print-in-order.cpp)
+		1114-print-in-order.cpp
+		0300-longest-increasing-subsequence.cpp
+		0322-coin-change.cpp)
 
 target_link_libraries(leetcode PRIVATE doctest_with_main)

@@ -1,5 +1,6 @@
 #include <doctest/doctest.h>
 
+#include <algorithm>
 #include <array>
 #include <string>
 
@@ -13,18 +14,16 @@ bool is_anagram(const string& s1, string const& s2)
 {
 	array<int, 26> hist {};
 
-	for (auto c : s1) {
+	for (auto const c : s1) {
 		++hist[static_cast<size_t>(c - 'a')];
 	}
 
-	for (auto c : s2) {
+	for (auto const c : s2) {
 		--hist[static_cast<size_t>(c - 'a')];
 	}
 
-	for (auto i : hist) {
-		if (i != 0) {
-			return false;
-		}
+	if (!ranges::all_of(hist, [](auto const & i) { return i == 0; })) {
+		return false;
 	}
 	return true;
 }
