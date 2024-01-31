@@ -15,6 +15,7 @@ add_executable(leetcode
 		1108-defanging-an-ip-address.cpp
 		1114-print-in-order.cpp
 		0300-longest-increasing-subsequence.cpp
-		0322-coin-change.cpp)
+        0322-coin-change.cpp
+        0338-counting-bits.cpp)
 
 target_link_libraries(leetcode PRIVATE doctest_with_main)
