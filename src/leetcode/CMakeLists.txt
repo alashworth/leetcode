@@ -16,6 +16,7 @@ add_executable(leetcode
 		1114-print-in-order.cpp
 		0300-longest-increasing-subsequence.cpp
         0322-coin-change.cpp
-        0338-counting-bits.cpp)
+		0338-counting-bits.cpp
+		0198-house-robber.cpp)
 
 target_link_libraries(leetcode PRIVATE doctest_with_main)
