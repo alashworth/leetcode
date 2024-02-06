@@ -17,6 +17,8 @@ add_executable(leetcode
 		0300-longest-increasing-subsequence.cpp
         0322-coin-change.cpp
 		0338-counting-bits.cpp
-		0198-house-robber.cpp)
+		0198-house-robber.cpp
+		0070-climbing-stairs.cpp
+		0035-search-insert-position.cpp)
 
 target_link_libraries(leetcode PRIVATE doctest_with_main)
