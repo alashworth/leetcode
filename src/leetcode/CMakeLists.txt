@@ -23,6 +23,8 @@ add_executable(leetcode
 		0005-longest-palindromic-substring.cpp
 		0392-is-subsequence.cpp
 		0064-minimum-path-sum.cpp
-		0121-best-time-to-buy-and-sell-stock.cpp)
+		0121-best-time-to-buy-and-sell-stock.cpp
+		0053-maximum-subarray.cpp
+)
 
 target_link_libraries(leetcode PRIVATE doctest_with_main)
