@@ -37,4 +37,5 @@ endif ()
 # Main targets built by this project
 add_subdirectory(src/leetcode)
 add_subdirectory(src/euler)
+add_subdirectory(src/misc)
 add_subdirectory(bench)

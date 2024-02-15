@@ -25,6 +25,7 @@ add_executable(leetcode
 		0064-minimum-path-sum.cpp
 		0121-best-time-to-buy-and-sell-stock.cpp
 		0053-maximum-subarray.cpp
+		0094-binary-tree-inorder-traversal.cpp
 )
 
 target_link_libraries(leetcode PRIVATE doctest_with_main)
