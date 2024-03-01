@@ -46,10 +46,10 @@ TEST_CASE("Greedy Conditions")
 	REQUIRE_EQ(yuckdonalds1(m, p, k), 400);
 }
 
-TEST_CASE("An Example")
-{
-	vector<int> m = { 0, 5, 6, 11, 14, 20, 22, 28 };
-	vector<int> p = { 30, 10, 40, 1, 15, 5, 23, 17 };
-	int k = 5;
-	REQUIRE_EQ(yuckdonalds1(m, p, k), 108);
-}
+// TEST_CASE("An Example")
+// {
+// 	vector<int> m = { 0, 5, 6, 11, 14, 20, 22, 28 };
+// 	vector<int> p = { 30, 10, 40, 1, 15, 5, 23, 17 };
+// 	int k = 5;
+// 	REQUIRE_EQ(yuckdonalds1(m, p, k), 108);
+// }

@@ -26,6 +26,10 @@ add_executable(leetcode
 		0121-best-time-to-buy-and-sell-stock.cpp
 		0053-maximum-subarray.cpp
 		0094-binary-tree-inorder-traversal.cpp
+		0207-course-schedule.cpp
+		0041-first-missing-positive.cpp
+		0448-find-disappeared-numbers.cpp
+		0268-missing-number.cpp
 )
 
 target_link_libraries(leetcode PRIVATE doctest_with_main)

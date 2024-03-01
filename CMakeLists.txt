@@ -11,27 +11,31 @@ set(CMAKE_CXX_EXTENSIONS NO)
 # Externally provided content
 include(FetchContent)
 fetchcontent_declare(doctest
-		GIT_REPOSITORY https://github.com/onqtam/doctest.git
-		GIT_TAG 2.4.6
-		GIT_SHALLOW
-		)
+        GIT_REPOSITORY https://github.com/onqtam/doctest.git
+        GIT_SHALLOW
+)
 
 fetchcontent_declare(sltbench
-		GIT_REPOSITORY https://github.com/ivafanas/sltbench.git
-		GIT_SHALLOW
-		)
+        GIT_REPOSITORY https://github.com/ivafanas/sltbench.git
+        GIT_SHALLOW
+)
 
-fetchcontent_makeavailable(sltbench doctest)
+fetchcontent_declare(spdlog
+        GIT_REPOSITORY https://github.com/gabime/spdlog.git
+        GIT_SHALLOW
+)
+
+fetchcontent_makeavailable(sltbench doctest spdlog)
 
 # Compile Options
 if (GNU)
-	add_compile_options(-Wall -Wextra -pedantic -Wshadow -Wnon-virtual-dtor
-			-Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion
-			-Wsign-conversion -Wmisleading-indentation -Wduplicated-cond
-			-Wduplicated-branches -Wlogical-op -Wnull-dereference -Wuseless-cast
-			-Wdouble-promotion -Wformat=2)
+    add_compile_options(-Wall -Wextra -pedantic -Wshadow -Wnon-virtual-dtor
+            -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion
+            -Wsign-conversion -Wmisleading-indentation -Wduplicated-cond
+            -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wuseless-cast
+            -Wdouble-promotion -Wformat=2)
 elseif (CLANG)
-	add_compile_options(-Weverything)
+    add_compile_options(-Weverything)
 endif ()
 
 # Main targets built by this project
