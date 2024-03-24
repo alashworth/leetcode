@@ -1,5 +1,5 @@
 # Preamble
-cmake_minimum_required(VERSION 3.19)
+cmake_minimum_required(VERSION 3.22)
 project(cpp-puzzles)
 
 # Project wide setup
@@ -15,17 +15,16 @@ fetchcontent_declare(doctest
         GIT_SHALLOW
 )
 
-fetchcontent_declare(sltbench
-        GIT_REPOSITORY https://github.com/ivafanas/sltbench.git
+fetchcontent_declare(rapidcheck
+        GIT_REPOSITORY https://github.com/emil-e/rapidcheck.git
         GIT_SHALLOW
 )
 
-fetchcontent_declare(spdlog
-        GIT_REPOSITORY https://github.com/gabime/spdlog.git
-        GIT_SHALLOW
-)
+fetchcontent_makeavailable(doctest rapidcheck)
 
-fetchcontent_makeavailable(sltbench doctest spdlog)
+find_package(GTest REQUIRED)
+find_package(benchmark REQUIRED)
+
 
 # Compile Options
 if (GNU)
@@ -33,7 +32,7 @@ if (GNU)
             -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion
             -Wsign-conversion -Wmisleading-indentation -Wduplicated-cond
             -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wuseless-cast
-            -Wdouble-promotion -Wformat=2)
+            -Wdouble-promotion -Wformat=2 -Wformat-signedness -Wpadded)
 elseif (CLANG)
     add_compile_options(-Weverything)
 endif ()

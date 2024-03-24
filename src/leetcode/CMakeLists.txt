@@ -30,6 +30,7 @@ add_executable(leetcode
 		0041-first-missing-positive.cpp
 		0448-find-disappeared-numbers.cpp
 		0268-missing-number.cpp
+        0094-validate-binary-search-tree.cpp
 )
 
 target_link_libraries(leetcode PRIVATE doctest_with_main)
