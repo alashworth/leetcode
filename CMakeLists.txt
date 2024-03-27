@@ -8,23 +8,8 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 set(CMAKE_CXX_EXTENSIONS NO)
 
-# Externally provided content
-include(FetchContent)
-fetchcontent_declare(doctest
-        GIT_REPOSITORY https://github.com/onqtam/doctest.git
-        GIT_SHALLOW
-)
-
-fetchcontent_declare(rapidcheck
-        GIT_REPOSITORY https://github.com/emil-e/rapidcheck.git
-        GIT_SHALLOW
-)
-
-fetchcontent_makeavailable(doctest rapidcheck)
-
 find_package(GTest REQUIRED)
 find_package(benchmark REQUIRED)
-
 
 # Compile Options
 if (GNU)
