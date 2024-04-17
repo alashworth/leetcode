@@ -1,41 +1,46 @@
-#include <doctest/doctest.h>
+#include <gtest/gtest.h>
 
-#include <algorithm>
-#include <limits>
 #include <vector>
 
 using namespace std;
 
-int rob(vector<int> const & nums)
+int rob(vector<int> const & cash)
 {
-	if (nums.size() == 1)
-		return nums[0];
-	if (nums.size() == 2)
-		return max(nums[0], nums[1]);
+	auto N = cash.size();
+	if (N == 1)
+		return cash[0];
 
-	vector<int> d(nums.size());
-	d[0] = nums[0];
-	d[1] = max(nums[0], nums[1]);
-	for (int i = 2; i < nums.size(); ++i) {
-		d[i] = max(d[i - 1], nums[i] + d[i - 2]);
-	}
-	return d.back();
+	vector<int> p(N, 0);
+
+	p[0] = cash[0];
+	p[1] = max(cash[0], cash[1]);
+
+	for (int i = 2; i < N; ++i)
+		p[i] = max(cash[i] + p[i - 2], p[i - 1]);
+
+	return p[N - 1];
 }
 
-TEST_CASE("Example 1")
+TEST(LC0198, Example1)
 {
 	vector<int> const nums { 1, 2, 3, 1 };
-	REQUIRE_EQ(rob(nums), 4);
+	EXPECT_EQ(rob(nums), 4);
 }
 
-TEST_CASE("Example 2")
+TEST(LC0198, Example2)
 {
 	vector<int> const nums { 2, 7, 9, 3, 1 };
-	REQUIRE_EQ(rob(nums), 12);
+	EXPECT_EQ(rob(nums), 12);
 }
 
-TEST_CASE("Valuable Ends")
+TEST(LC0198, Example3)
 {
 	vector<int> const nums { 2, 1, 1, 2 };
-	REQUIRE_EQ(rob(nums), 4);
+	EXPECT_EQ(rob(nums), 4);
+}
+
+TEST(LC0198, ZeroCase)
+{
+	vector<int> const nums { 0 };
+	EXPECT_EQ(rob(nums), 0);
 }
