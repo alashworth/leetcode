@@ -14,6 +14,7 @@ add_executable(leetcode
         0647-palindromic-substrings.cpp
         0005-longest-palindromic-substring.cpp
         0091-decode-ways.cpp
+        0322-coin-change.cpp
 )
 
 target_link_libraries(leetcode PUBLIC

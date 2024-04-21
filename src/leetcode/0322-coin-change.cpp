@@ -1,52 +1,64 @@
-#include <doctest/doctest.h>
+#include <gtest/gtest.h>
+
+#include <algorithm>
 #include <limits>
 #include <vector>
 
 using namespace std;
 
-// You are given an integer array coins representing coins of different
-// denominations and an integer amount representing a total amount of money.
-// Return the fewest number of coins that you need to make up that amount. If
-// that amount of money cannot be made up by any combination of the coins,
-// return -1. You may assume that you have an infinite number of each kind of
-// coin.
-
-int make_change(vector<int> const & coins, int const amount)
+int uccp(vector<int> & coins, int amt)
 {
-	vector<int> d(amount + 1, numeric_limits<int>::max());
-	d[0] = 0;
-	for (int i = 0; i < amount; ++i) {
-		for (int const v : coins) {
-			if (v > amount || i + v > amount)
-				continue;
-			if (d[i] < d[i + v])
-				d[i + v] = d[i] + 1;
+	vector<int> a(amt + 1, numeric_limits<int>::max());
+
+	a[0] = 0;
+	sort(coins.begin(), coins.end());
+	for (int i = 1; i <= amt; ++i) {
+		for (int c : coins) {
+			if (i < c)
+				break;
+			if (a[i - c] != numeric_limits<int>::max())
+				a[i] = min(a[i], a[i - c] + 1);
 		}
 	}
-
-	return d[amount] == numeric_limits<int>::max() ? -1 : d[amount];
+	return a[amt] == numeric_limits<int>::max() ? -1 : a[amt];
 }
 
-TEST_CASE("Example 1")
+TEST(LC0322, Example1)
 {
-	vector<int> const coins { 1, 2, 5 };
-	int constexpr amount = 11;
+	vector<int> coins { 1, 2, 5 };
+	int amount = 11;
 
-	REQUIRE_EQ(make_change(coins, amount), 3);
+	EXPECT_EQ(uccp(coins, amount), 3);
 }
 
-TEST_CASE("Numeric Overflow")
+TEST(LC0322, NumericOverflow)
 {
-	vector<int> const coins {2147483647};
-	int constexpr amount = 2;
+	vector<int> coins { 2147483647 };
+	int amount = 2;
 
-	REQUIRE_EQ(make_change(coins, amount), -1);
+	EXPECT_EQ(uccp(coins, amount), -1);
 }
 
-TEST_CASE("Huge Coins 2")
+TEST(LC0322, HugeCoins2)
 {
-	vector<int> const coins {474,83,404,3};
-	int constexpr amount = 264;
+	vector<int> coins { 474, 83, 404, 3 };
+	int amount = 264;
 
-	REQUIRE_EQ(make_change(coins, amount), 8);
+	EXPECT_EQ(uccp(coins, amount), 8);
+}
+
+TEST(LC0322, India)
+{
+	vector<int> coins { 5, 10, 20, 25 };
+	int amount = 40;
+
+	EXPECT_EQ(uccp(coins, amount), 2);
+}
+
+TEST(LC0322, NoNickels)
+{
+	vector<int> coins { 1, 10, 25 };
+	int amount = 40;
+
+	EXPECT_EQ(uccp(coins, amount), 4);
 }
