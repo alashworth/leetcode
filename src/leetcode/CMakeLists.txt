@@ -16,6 +16,7 @@ add_executable(leetcode
         0091-decode-ways.cpp
         0322-coin-change.cpp
         0152-maximum-product-subarray.cpp
+        0139-word-break.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
