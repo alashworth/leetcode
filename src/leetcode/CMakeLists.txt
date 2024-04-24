@@ -1,7 +1,7 @@
 add_executable(leetcode
         0005-longest-palindromic-substring.cpp
         0041-first-missing-positive.cpp
-        0056-subarray-sum-eq-k.cpp
+        0560-subarray-sum-eq-k.cpp
         0091-decode-ways.cpp
         0139-word-break.cpp
         0152-maximum-product-subarray.cpp
@@ -18,6 +18,7 @@ add_executable(leetcode
         1700-number-of-students-unable-to-eat-lunch.cpp
         2958-len-longest-sub-le-k.cpp
         2962-count-subarrays-max-k.cpp
+        0416-partition-equal-subset-sum.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
