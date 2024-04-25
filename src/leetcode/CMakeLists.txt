@@ -19,6 +19,10 @@ add_executable(leetcode
         2958-len-longest-sub-le-k.cpp
         2962-count-subarrays-max-k.cpp
         0416-partition-equal-subset-sum.cpp
+        0062-unique-paths.cpp
+        1143-longest-common-subsequence.cpp
+        0121-best-time-to-buy-and-sell-stock.cpp
+        0122-best-time-to-buy-and-sell-stock-ii.cpp
 )
 
 target_link_libraries(leetcode PUBLIC

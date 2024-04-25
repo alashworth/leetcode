@@ -1,23 +1,24 @@
-#include <doctest/doctest.h>
+#include <gtest/gtest.h>
 
 #include <vector>
 
 using namespace std;
 
-int max_profit(vector<int> const & prices)
+static int max_profit(vector<int> const & prices)
 {
-	int mbc = prices[0];
-	int mp = 0;
-	for (int i = 1; i < prices.size(); ++i) {
-		mbc = min(prices[i], mbc);
-		mp = max(prices[i] - mbc, mp);
+	int min_price = numeric_limits<int>::max();
+	int max_profit = numeric_limits<int>::min();
+	for (auto p : prices) {
+		min_price = min(min_price, p);
+		int profit = p - min_price;
+		max_profit = max(max_profit, profit);
 	}
-	return mp;
+	return max_profit;
 }
 
-TEST_CASE("Example 1")
+TEST(LC0121, Example1)
 {
 	vector<int> const prices { 7, 1, 5, 3, 6, 4 };
 
-	REQUIRE_EQ(max_profit(prices), 5);
+	EXPECT_EQ(max_profit(prices), 5);
 }
