@@ -3,6 +3,7 @@ add_executable(misc
         dpv63-yuckdonalds.cpp
         dpv33-topological-order.cpp
         dpv3x.cpp
+        ../util/algorithms.cpp
 )
 
 target_link_libraries(misc PRIVATE doctest_with_main spdlog)

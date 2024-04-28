@@ -23,6 +23,10 @@ add_executable(leetcode
         1143-longest-common-subsequence.cpp
         0121-best-time-to-buy-and-sell-stock.cpp
         0122-best-time-to-buy-and-sell-stock-ii.cpp
+        0309-best-time-to-buy-and-sell-stock-with-cooldown.cpp
+        0518-coin-change-ii.cpp
+        0494-target-sum.cpp
+        0704-binary-search.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
