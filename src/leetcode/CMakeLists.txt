@@ -27,6 +27,7 @@ add_executable(leetcode
         0518-coin-change-ii.cpp
         0494-target-sum.cpp
         0704-binary-search.cpp
+        0074-search-a-2d-matrix.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
