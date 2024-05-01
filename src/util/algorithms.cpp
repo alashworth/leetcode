@@ -1,6 +1,11 @@
+#include <algorithm>
+#include <cassert>
 #include <vector>
 
-int bsearch(std::vector<int> const & n, int v)
+using namespace std;
+
+namespace {
+int binary_search(vector<int> const & n, int v)
 {
 	int l = 0;
 	int r = n.size() - 1;
@@ -16,7 +21,7 @@ int bsearch(std::vector<int> const & n, int v)
 	return -1;
 }
 
-int bsearchl(std::vector<int> const & n, int v)
+int binary_search_left(vector<int> const & n, int v)
 {
 	int l = 0;
 	int r = n.size();
@@ -30,7 +35,7 @@ int bsearchl(std::vector<int> const & n, int v)
 	return l;
 }
 
-int bsearchr(std::vector<int> const & n, int v)
+int binary_search_right(vector<int> const & n, int v)
 {
 	int l = 0;
 	int r = n.size();
@@ -43,3 +48,23 @@ int bsearchr(std::vector<int> const & n, int v)
 	}
 	return r - 1;
 }
+
+int knapsack_01(vector<int> const & values, vector<int> const & weights,
+	int const max_weight)
+{
+	assert(values.size() == weights.size());
+	vector<vector<int>> dp(values.size() + 1, vector<int>(max_weight + 1, 0));
+	auto & v = values;
+	auto & w = weights;
+	int N = values.size();
+	auto & W = max_weight;
+	for (int i = 1; i <= N; ++i) {
+		for (int j = 1; j <= W; ++j) {
+			if (w[i] > j) // item too big to fit
+				dp[i][j] = dp[i - 1][j];
+			else
+				dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - w[i]] + v[i]);
+		}
+	}
+}
+} // namespace
