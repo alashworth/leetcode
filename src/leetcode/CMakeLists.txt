@@ -28,6 +28,7 @@ add_executable(leetcode
         0494-target-sum.cpp
         0704-binary-search.cpp
         0074-search-a-2d-matrix.cpp
+        2000-reverse-prefix-of-word.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
