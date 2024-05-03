@@ -1,33 +1,33 @@
-#include <doctest/doctest.h>
+#include <gtest/gtest.h>
 
 #include <algorithm>
-#include <array>
 #include <string>
 
 using namespace std;
 
-// Given two strings s and t , write a function to determine if t is an anagram
-// of s.
-//
-// Note: You may assume the string contains only lowercase alphabets.
-bool is_anagram(const string& s1, string const& s2)
+bool is_anagram(const string & s1, string const & s2)
 {
-	array<int, 26> hist {};
-
-	for (auto const c : s1) {
-		++hist[static_cast<size_t>(c - 'a')];
-	}
-
-	for (auto const c : s2) {
-		--hist[static_cast<size_t>(c - 'a')];
-	}
-
-	if (!ranges::all_of(hist, [](auto const & i) { return i == 0; })) {
-		return false;
-	}
+	int t[26] = { 0 };
+	for (char const c : s1)
+		++t[c - 97];
+	for (char const c : s2)
+		--t[c - 97];
+	for (int const v : t)
+		if (v != 0)
+			return false;
 	return true;
 }
 
-TEST_CASE("Example 1") { CHECK(is_anagram("anagram", "nagaram")); }
+TEST(LC0242, Example1)
+{
+	string s1 { "anagram" };
+	string s2 { "nagaram" };
+	EXPECT_TRUE(is_anagram(s1, s2));
+}
 
-TEST_CASE("Example 2") { CHECK(!is_anagram("rat", "car")); }
+TEST(LC0242, Example2)
+{
+	string s1 { "rat" };
+	string s2 { "car" };
+	EXPECT_FALSE(is_anagram(s1, s2));
+}
