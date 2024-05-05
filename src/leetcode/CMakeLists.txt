@@ -36,6 +36,7 @@ add_executable(leetcode
         2962-count-subarrays-max-k.cpp
         0881-boats-to-save-people.cpp
         0125-valid-palindrome.cpp
+        0237-delete-node-in-a-linked-list.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
