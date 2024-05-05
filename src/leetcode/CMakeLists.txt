@@ -34,6 +34,8 @@ add_executable(leetcode
         2441-largest-positive-integer-that-exists-with-its-negative.cpp
         2958-len-longest-sub-le-k.cpp
         2962-count-subarrays-max-k.cpp
+        0881-boats-to-save-people.cpp
+        0125-valid-palindrome.cpp
 )
 
 target_link_libraries(leetcode PUBLIC

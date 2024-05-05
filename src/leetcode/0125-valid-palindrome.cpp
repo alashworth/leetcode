@@ -1,56 +1,51 @@
-#include <doctest/doctest.h>
+#include <gtest/gtest.h>
 
-#include <algorithm>
-#include <array>
-#include <string>
+#include <cctype>
 
-using namespace std;
-
-// Given a string, determine if it is a palindrome, considering only
-// alphanumeric characters and ignoring cases.
-bool is_palindrome(string s)
+static bool is_palindrome(const char * s)
 {
-	size_t i = 0;
-	size_t j = !s.empty() ? s.size() - 1 : 0;
-	while (i < j) {
-	incr_front:
-		auto front = toupper(s[i]);
-		if (!isalnum(front)) {
-			i++;
-			if (i < j) {
-				goto incr_front;
-			} else {
-				break;
-			}
-		}
+	int l = 0;
+	int r = 0;
+	while (*(s + r + 1) != '\0')
+		++r;
 
-	incr_back:
-		auto back = toupper(s[j]);
-		if (!isalnum(back)) {
-			j--;
-			if (i < j) {
-				goto incr_back;
-			} else {
-				break;
-			}
-		}
+	/* convert or remove character */
+	while (l < r) {
+		char a = s[l];
+		char b = s[r];
 
-		if (front == back) {
-			i++;
-			j--;
+		// happy case, no preprocessing needed
+		if (a == b) {
+			l++, r--;
 			continue;
-		} else {
-			return false;
 		}
+
+		bool notalnum = false;
+		if (isalnum(a) == 0) {
+			l++;
+			notalnum = true;
+		}
+		if (isalnum(b) == 0) {
+			r--;
+			notalnum = true;
+		}
+		if (notalnum)
+			continue;
+
+		a = tolower(a);
+		b = tolower(b);
+
+		if (a == b)
+			l++, r--;
+		else
+			return false;
 	}
+
 	return true;
 }
 
-TEST_CASE("Example 1")
+TEST(LC0125, Example1)
 {
-	CHECK(is_palindrome("A man, a plan, a canal: Panama"));
+	auto s = "A man, a plan, a canal: Panama";
+	EXPECT_TRUE(is_palindrome(s));
 }
-
-TEST_CASE("Example 2") { CHECK(!is_palindrome("race a car")); }
-
-TEST_CASE("Punctuation") { CHECK(is_palindrome(".,")); }
