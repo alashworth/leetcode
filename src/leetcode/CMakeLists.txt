@@ -38,6 +38,7 @@ add_executable(leetcode
         0125-valid-palindrome.cpp
         0237-delete-node-in-a-linked-list.cpp
         0049-group-anagrams.cpp
+        2487-remove-nodes-from-linked-list.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
