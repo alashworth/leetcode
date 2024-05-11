@@ -39,6 +39,10 @@ add_executable(leetcode
         0237-delete-node-in-a-linked-list.cpp
         0049-group-anagrams.cpp
         2487-remove-nodes-from-linked-list.cpp
+        2816-double-a-number-represented-as-a-linked-list.cpp
+        0506-relative-ranks.cpp
+        3075-maximize-happiness-of-selected-children.cpp
+        0786-kth-smallest-prime-fraction.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
