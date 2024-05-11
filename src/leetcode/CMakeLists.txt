@@ -43,6 +43,7 @@ add_executable(leetcode
         0506-relative-ranks.cpp
         3075-maximize-happiness-of-selected-children.cpp
         0786-kth-smallest-prime-fraction.cpp
+        0857-minimum-cost-to-hire-k-workers.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
