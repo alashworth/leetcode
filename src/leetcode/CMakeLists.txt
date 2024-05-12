@@ -44,8 +44,12 @@ add_executable(leetcode
         3075-maximize-happiness-of-selected-children.cpp
         0786-kth-smallest-prime-fraction.cpp
         0857-minimum-cost-to-hire-k-workers.cpp
+        0146-lru-cache.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
         GTest::gtest_main
 )
+
+target_compile_options(leetcode PUBLIC -fsanitize=address)
+target_link_options(leetcode PUBLIC -fsanitize=address)
