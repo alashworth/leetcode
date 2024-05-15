@@ -45,6 +45,8 @@ add_executable(leetcode
         0786-kth-smallest-prime-fraction.cpp
         0857-minimum-cost-to-hire-k-workers.cpp
         0146-lru-cache.cpp
+        0861-score-after-flipping-matrix.cpp
+        0020-valid-parentheses.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
