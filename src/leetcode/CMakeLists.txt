@@ -47,6 +47,8 @@ add_executable(leetcode
         0146-lru-cache.cpp
         0861-score-after-flipping-matrix.cpp
         0020-valid-parentheses.cpp
+        0110-balanced-binary-tree.cpp
+        0078-subsets.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
