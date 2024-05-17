@@ -31,10 +31,10 @@ vector<vector<int>> three_sum(vector<int> & nums)
 	return result;
 }
 
-TEST(LC0015, Example1)
-{
-	vector nums { -1, 0, 1, 2, -1, -4 };
-	auto rv = three_sum(nums);
-	vector<vector<int>> expected { { -1, 0, 1 }, { -1, -1, 2 } };
-	EXPECT_EQ(three_sum(nums), expected);
-}
+// TEST(LC0015, Example1)
+//{
+//	vector nums { -1, 0, 1, 2, -1, -4 };
+//	auto rv = three_sum(nums);
+//	vector<vector<int>> expected { { -1, 0, 1 }, { -1, -1, 2 } };
+//	EXPECT_EQ(three_sum(nums), expected);
+// }

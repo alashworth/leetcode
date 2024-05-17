@@ -51,6 +51,7 @@ add_executable(leetcode
         0078-subsets.cpp
         0015-3sum.cpp
         0003-longest-substring-without-repeating-characters.cpp
+        0033-search-in-rotated-sorted-array.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
