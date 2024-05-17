@@ -49,6 +49,8 @@ add_executable(leetcode
         0020-valid-parentheses.cpp
         0110-balanced-binary-tree.cpp
         0078-subsets.cpp
+        0015-3sum.cpp
+        0003-longest-substring-without-repeating-characters.cpp
 )
 
 target_link_libraries(leetcode PUBLIC

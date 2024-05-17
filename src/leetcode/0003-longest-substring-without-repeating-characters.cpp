@@ -1,49 +1,42 @@
-#include <doctest/doctest.h>
+#include <gtest/gtest.h>
 
-#include <algorithm>
-#include <string>
-#include <vector>
-
-using namespace std;
-
-// given a string, find the longest substring without repeating characters
-
-int length_of_longest_substring(string s)
+int lengthOfLongestSubstring(char const * s)
 {
-	if (s.empty()) {
+	int N = strlen(s);
+	if (!N)
 		return 0;
-	}
-	vector<char> substr, best_substr { s[0] };
 
-	for (size_t i = 0; i < s.size(); ++i) {
-		substr.clear();
-		for (size_t j = i; j < s.size(); ++j) {
-			auto p = find(substr.begin(), substr.end(), s[j]);
-			if (p == substr.end()) {
-				substr.emplace_back(s[j]);
-				if (substr.size() > best_substr.size()) {
-					best_substr = substr;
-				}
-				continue;
-			} else {
-				break;
+	unsigned short seen[256];
+	memset(seen, 0xFF, sizeof seen);
+	unsigned short previous = 1, current, max_seen = 1;
+	seen[s[0]] = 0;
+	for (int i = 1; i < N; ++i) {
+		char c = s[i];
+		if (seen[c] == USHRT_MAX) {
+			seen[c] = i;
+			current = previous + 1;
+		} else {
+			current = i - seen[c];
+			if (previous < current) {
+				current = previous + 1;
 			}
+			seen[c] = i;
 		}
+		if (current > max_seen)
+			max_seen = current;
+		previous = current;
 	}
-	return static_cast<int>(best_substr.size());
+	return max_seen;
 }
 
-TEST_CASE("3: solution passes examples")
+TEST(LC0003, Example3)
 {
-	string s1("abcabcbb");
-	string s2("bbbbb");
-	string s3("pwwkew");
-	string s4(" ");
-	string s5("au");
+	char const * s = "pwwkew";
+	EXPECT_EQ(lengthOfLongestSubstring(s), 3);
+}
 
-	CHECK_EQ(length_of_longest_substring(s1), 3);
-	CHECK_EQ(length_of_longest_substring(s2), 1);
-	CHECK_EQ(length_of_longest_substring(s3), 3);
-	CHECK_EQ(length_of_longest_substring(s4), 1);
-	CHECK_EQ(length_of_longest_substring(s5), 2);
+TEST(LC0003, TC139)
+{
+	char const * s = "abba";
+	EXPECT_EQ(lengthOfLongestSubstring(s), 2);
 }
