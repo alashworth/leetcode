@@ -52,6 +52,8 @@ add_executable(leetcode
         0015-3sum.cpp
         0003-longest-substring-without-repeating-characters.cpp
         0033-search-in-rotated-sorted-array.cpp
+        0055-jump-game.cpp
+        0295-find-median-from-data-stream.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
