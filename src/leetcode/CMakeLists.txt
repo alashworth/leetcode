@@ -54,6 +54,7 @@ add_executable(leetcode
         0033-search-in-rotated-sorted-array.cpp
         0055-jump-game.cpp
         0295-find-median-from-data-stream.cpp
+        0039-combination-sum.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
