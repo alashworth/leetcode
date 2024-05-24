@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void backtrack(
+static void backtrack(
 	vector<int> & c, int r, int i, vector<int> & p, vector<vector<int>> & o)
 {
 	if (r < 0 || i >= c.size())

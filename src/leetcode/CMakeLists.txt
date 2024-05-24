@@ -55,6 +55,8 @@ add_executable(leetcode
         0055-jump-game.cpp
         0295-find-median-from-data-stream.cpp
         0039-combination-sum.cpp
+        0090-subsets-ii.cpp
+        0040-combination-sum-ii.cpp
 )
 
 target_link_libraries(leetcode PUBLIC
